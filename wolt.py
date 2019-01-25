@@ -9,7 +9,9 @@ import collections
 
 
 def write_to_file(data):
-    """Get median time for pickup for specific restaurant."""
+    """Write data to a new file.
+    :return how many rows is written to a new file
+    """
     # location_id,median_pickup_time
     # 1,21
     # 2,15
@@ -30,8 +32,8 @@ def write_to_file(data):
 
 
 def parse_data(city, wanted_date, wanted_time, file_name):
-    """Calculate median for specific restaurant.
-        return: median for restaurant
+    """Modifies data to a correct form. Inserts it into a dictionary.
+        :return: dictonary of {id : [pickup times, ...]}
     """
     with open(file_name, 'r') as file:
         # data dictionary has id as key, array of pickup_times as a values
